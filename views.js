@@ -103,7 +103,7 @@
     const tiles = el("div", { class: "tiles" },
       tile(matrix.lists.length, "Leistungsverzeichnisse"),
       tile(matrix.positions.toLocaleString("de-DE"), "Positionen"),
-      tile(counters.count, "Funde zwischen und in den Listen"),
+      tile(counters.count, "Funde zwischen den Listen"),
       tile(counters.confirmed + " / " + counters.rejected + " / " + counters.unclear + " / " + counters.open,
         "bestätigt / verworfen / unklar / offen", "review"));
 
@@ -159,9 +159,9 @@
     if (!chosen) {
       panel.append(el("h3", { text: "Zwischen den Dokumenten" }),
         el("p", { text: "Jede Zeile und Spalte ist ein Leistungsverzeichnis. Eine farbige Zelle heißt: " +
-          "Zwischen diesen beiden Listen steht ein Fund. Die Diagonale zeigt Funde innerhalb einer Liste." }),
+          "Zwischen diesen beiden Listen steht ein Fund. Hinweise innerhalb einer Liste stehen unter Einzel-LV." }),
         el("p", { text: matrix.handovers.length ? matrix.handovers.length + " Übergaben zwischen Gewerken sind " +
-          "aus den Listen belegt (graue Zellen ohne Zahl)." : "" }));
+          "aus den Listen belegt (Zellen mit Zahl, oder grau ohne Fund)." : "" }));
     } else {
       const a = lists.find((entry) => entry.doc === chosen.a) || { doc: chosen.a, trade: "" };
       const b = lists.find((entry) => entry.doc === chosen.b) || { doc: chosen.b, trade: "" };
@@ -353,10 +353,14 @@
     const zone = el("label", { class: "drop", for: "live-file" },
       el("strong", { text: "GAEB-Datei oder Excel-Liste hierher ziehen oder klicken" }),
       el("span", { text: "GAEB 90 (.D83, .D84, .D86), GAEB DA XML (.X83, .X84, .X86) oder Excel (.xlsx, Spalten wie " +
-        "Pos., Kurztext, Menge, Einheit). Die Datei wird nur in dieser Anwendung auf diesem Rechner gelesen und nicht " +
+        "Pos., Kurztext, Menge, Einheit). In der lokalen Anwendung wird die Datei nur auf dem eigenen Rechner gelesen und nicht " +
         "gespeichert; kein Modell, kein Netz." }), chosen, input);
     const result = el("div", { id: "live-result", class: "live-result" });
     root.replaceChildren(el("p", { class: "message", id: "demo-live-note", text: "In der Online-Demo nicht verfügbar. Lokal starten: siehe README des Repositorys." }), zone, result);
+    input.disabled = true;
+    zone.setAttribute("aria-disabled", "true");
+    zone.style.opacity = "0.45";
+    zone.style.pointerEvents = "none";
     const send = async (file) => {
       if (!file) return;
       chosen.textContent = "Gewählt: " + file.name;
@@ -430,7 +434,7 @@
       el("h3", { text: ((pair) => "Ausschreibung gegen Auftrag" + (pair && pair.a.file && pair.b.file ? ": " + pair.a.file + " gegen " + pair.b.file : ""))(answer.pairs.find((p) => p.stage && p.a.items === h.tendered && p.b.items === h.ordered)) }),
       el("div", { class: "tiles" }, tile(h.tendered, "ausgeschrieben"), tile(h.ordered, "beauftragt"),
         tile(h.added.count, "kamen hinzu", "added"), tile(h.removed, "entfallen"), tile(h.renumbered, "umnummeriert")),
-      el("p", { text: "Ergebnis: " + h.verdict + ". Hinzugekommen" +
+      el("p", { text: "Annahme: Der Auftrag enthält Positionen, die nicht ausgeschrieben waren. Ergebnis: " + h.verdict + ". Hinzugekommen" +
         (h.added.count > h.added.shown.length ? " (die ersten " + h.added.shown.length + ")" : "") + ":" }),
       el("div", { class: "chips" }, ...h.added.shown.map((number) => el("span", { class: "chip", text: number }))),
       el("p", { class: "muted", text: (sections ? "Sie stehen nur im Auftrag, in: " + sections + ". " : "") +
@@ -477,9 +481,9 @@
         el("td", { class: "num", text: String(t.in_order) }), el("td", { text: t.verdict || "" })));
     }
     titles.append(titleBody);
-    root.replaceChildren(hypo, el("section", { class: "card wide" }, stage), el("section", { class: "card wide" }, twin),
+    root.replaceChildren(el("p", { class: "message", id: "demo-diff-note", text: "Die Zahlen dieser Ansicht sind von Hand erfunden; die Demo enthält keine GAEB-Dateien." }), hypo, el("section", { class: "card wide" }, stage), el("section", { class: "card wide" }, twin),
       el("section", { class: "card wide" }, titles),
-      el("p", { class: "muted", text: "Vergleichszahlen der Demo von Hand erfunden. Preise werden nur als gleich oder ungleich gezählt, nie gezeigt." }));
+      el("p", { class: "muted", text: "Preise werden nur als gleich oder ungleich gezählt, nie gezeigt." }));
   }
 
   // ---- Messung -------------------------------------------------------------------------

@@ -617,7 +617,7 @@ function euroEffect(quantity, unit, priceText) {
 
   function showView(name) {
     state.view = name;
-    history.replaceState(null, "", "#" + name);
+    if (location.hash !== "#" + name) history.pushState(null, "", "#" + name);
     if (state.data) render();
     load();
   }

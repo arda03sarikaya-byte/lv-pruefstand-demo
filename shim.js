@@ -364,4 +364,29 @@
     reviews[findingId] = saved;
     return answer(200, { id: findingId, review: reviewView(saved), counters: count(baked.findings, reviews) });
   }
+
+  // ---- "Demo zurücksetzen" in the banner: forget the reviews of this browser, then reload ------------
+
+  function resetDemo() {
+    try {
+      const storage = window.localStorage;
+      const keys = [];
+      for (let i = 0; i < storage.length; i++) {
+        const key = storage.key(i);
+        if (key && key.startsWith(STORE_PREFIX)) keys.push(key);
+      }
+      for (const key of keys) storage.removeItem(key);
+    } catch (error) {
+      // No usable localStorage: the reviews live only in this page and go with the reload.
+    }
+    location.reload();
+  }
+
+  function wireReset() {
+    const button = document.getElementById("demo-reset");
+    if (button) button.addEventListener("click", resetDemo);
+  }
+
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", wireReset);
+  else wireReset();
 })();
