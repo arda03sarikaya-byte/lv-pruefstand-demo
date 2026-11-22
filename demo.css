@@ -17,3 +17,6 @@
 .demo-banner a:hover { color: var(--accent); }
 /* Long file names and paths must wrap at 375 px. */
 .demo-banner, .message { overflow-wrap: anywhere; }
+@media (max-width: 600px) {
+  .demo-banner { font-size: 14px; padding: 6px 16px; }
+}
