@@ -186,7 +186,7 @@
   /* Keys never reach the page behind the tour: Tab cycles over the card's buttons, and a key on any
      element outside the card does nothing (so Enter or Space cannot press "Bestätigt"). */
   function onKey(event) {
-    if (!tour) return;
+    if (!tour || event.metaKey || event.ctrlKey) return;
     event.stopImmediatePropagation();
     const inside = tour.parts.card.contains(event.target);
     if (event.key === "Tab") {
@@ -205,7 +205,7 @@
   }
 
   function onKeyUp(event) {
-    if (!tour) return;
+    if (!tour || event.metaKey || event.ctrlKey) return;
     event.stopImmediatePropagation();
     if (!tour.parts.card.contains(event.target)) event.preventDefault();
   }
