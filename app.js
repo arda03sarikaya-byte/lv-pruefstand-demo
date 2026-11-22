@@ -686,6 +686,7 @@ function euroEffect(quantity, unit, priceText) {
       else if (event.key === "ArrowLeft") { event.preventDefault(); move(-1); }
       else if (scrollFinding(event)) event.preventDefault();
     });
+    history.replaceState(null, "", "#" + state.view);
     load();
   }
 

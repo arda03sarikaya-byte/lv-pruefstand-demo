@@ -139,7 +139,7 @@
         if (cell.handovers.length) title.push("Übergabe: " + cell.handovers.join("; "));
         const td = el("td", { class: classes.join(" "), title: title.join(" · "), tabindex: "0",
           "data-cell": cell.a + "|" + cell.b, "data-findings": shown.join(" ") }, shown.length ? String(shown.length) : "");
-        const open = () => { local.cell = cell.a + "|" + cell.b; renderBauwerk(data); };
+        const open = () => { local.cell = cell.a + "|" + cell.b; const key = local.cell; renderBauwerk(data).then(() => { const again = Array.from(root.querySelectorAll("td[data-cell]")).find((node) => node.dataset.cell === key); if (again) again.focus(); }); };
         td.addEventListener("click", open);
         td.addEventListener("keydown", (event) => { if (event.key === "Enter") open(); });
         tr.append(td);

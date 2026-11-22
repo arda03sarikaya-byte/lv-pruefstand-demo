@@ -389,4 +389,9 @@
 
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", wireReset);
   else wireReset();
+
+  // The drop zone of "Live-Prüfung" is off in the online demo: a file dragged onto the page must not
+  // make the browser open it and leave the demo.
+  document.addEventListener("dragover", (event) => event.preventDefault());
+  document.addEventListener("drop", (event) => event.preventDefault());
 })();
