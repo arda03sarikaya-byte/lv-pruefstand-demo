@@ -104,8 +104,8 @@
       tile(matrix.lists.length, "Leistungsverzeichnisse"),
       tile(matrix.positions.toLocaleString("de-DE"), "Positionen"),
       tile(counters.count, "Funde zwischen und in den Listen"),
-      tile(counters.confirmed + " / " + counters.rejected + " / " + counters.open,
-        "bestätigt / verworfen / offen", "review"));
+      tile(counters.confirmed + " / " + counters.rejected + " / " + counters.unclear + " / " + counters.open,
+        "bestätigt / verworfen / unklar / offen", "review"));
 
     const cells = {};
     for (const cell of matrix.cells) cells[cell.a + "|" + cell.b] = cell;
@@ -281,7 +281,7 @@
         " (" + entry.positions + " Positionen, " + entry.base_findings + " Hinweise)" });
       select.append(option);
     }
-    local.lv = local.lv && lists.lists.some((e) => e.doc === local.lv) ? local.lv : lists.lists[0].doc;
+    local.lv = local.lv && lists.lists.some((e) => e.doc === local.lv) ? local.lv : lists.lists.reduce((a, e) => (e.base_findings > a.base_findings ? e : a), lists.lists[0]).doc;
     select.value = local.lv;
     const detail = el("div", { class: "lv-detail" });
     select.addEventListener("change", () => { local.lv = select.value; showDoc(); });
@@ -356,7 +356,7 @@
         "Pos., Kurztext, Menge, Einheit). Die Datei wird nur in dieser Anwendung auf diesem Rechner gelesen und nicht " +
         "gespeichert; kein Modell, kein Netz." }), chosen, input);
     const result = el("div", { id: "live-result", class: "live-result" });
-    root.replaceChildren(zone, result);
+    root.replaceChildren(el("p", { class: "message", id: "demo-live-note", text: "In der Online-Demo nicht verfügbar. Lokal starten: siehe README des Repositorys." }), zone, result);
     const send = async (file) => {
       if (!file) return;
       chosen.textContent = "Gewählt: " + file.name;
@@ -479,7 +479,7 @@
     titles.append(titleBody);
     root.replaceChildren(hypo, el("section", { class: "card wide" }, stage), el("section", { class: "card wide" }, twin),
       el("section", { class: "card wide" }, titles),
-      el("p", { class: "muted", text: "Gezählt per Code (pipeline/diff). Preise werden nur als gleich oder ungleich gezählt, nie gezeigt." }));
+      el("p", { class: "muted", text: "Vergleichszahlen der Demo von Hand erfunden. Preise werden nur als gleich oder ungleich gezählt, nie gezeigt." }));
   }
 
   // ---- Messung -------------------------------------------------------------------------
