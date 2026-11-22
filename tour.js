@@ -32,7 +32,7 @@
   }
 
   const STEPS = [
-    { title: "Bauwerk", text: "Alle Leistungsverzeichnisse als ein Gebäude. Jede Zahl ist ein Fund zwischen zwei Gewerken.",
+    { title: "Bauwerk", text: "Alle Leistungsverzeichnisse als ein Gebäude. Jede Zahl zählt die Funde zwischen zwei Gewerken.",
       target: "#bauwerk-root .matrix-scroll",
       async enter() { await openView("bauwerk"); } },
     { title: "Fund", text: "Jeder Fund ist eine Frage. Links und rechts stehen die Zitate aus beiden Listen.",
@@ -51,11 +51,18 @@
       target: "#fund-detail .source",
       async enter() {
         await openView("fund");
-        const button = await waitFor(() => $("#fund-detail .show-source"));
-        if (button && button.textContent === "Quelle zeigen") button.click();
-        await waitFor(() => $("#fund-detail .page-panel img, #fund-detail .page-panel .no-image"), 3000);
+        /* The view can render again after the click (the answer of api/findings), which closes the page. */
+        const page = () => $("#fund-detail .page-panel img, #fund-detail .page-panel .no-image");
+        for (let attempt = 0; attempt < 3; attempt++) {
+          const button = await waitFor(() => $("#fund-detail .show-source"));
+          if (button && button.textContent === "Quelle zeigen") button.click();
+          if (await waitFor(page, attempt === 2 ? 3000 : 400)) {
+            await sleep(200);
+            if (page()) break;
+          }
+        }
       } },
-    { title: "Prüfen", text: "Hier entscheidet ein Mensch: B bestätigt, V verworfen, U unklar.",
+    { title: "Prüfen", text: "Hier entscheidet ein Mensch: B = bestätigt, V = verworfen, U = unklar.",
       target: "#review-form .status-buttons",
       async enter() { await openView("pruefen"); } },
     { title: "Einzel-LV", text: "Grundprüfungen B1 bis B12 je Liste, zum Beispiel ein Rechenfehler.",
@@ -67,7 +74,7 @@
     { title: "Messung", text: "Unsere Messwerte aus dem echten Challenge-Projekt.",
       target: "#messung-root",
       async enter() { await openView("messung"); } },
-    { title: "Export", text: "Nur bestätigte Funde gehen hinaus: Fragenliste, markiertes LV, Risikobericht.",
+    { title: "Export", text: "Nur bestätigte Funde gehen hinaus: Fragenliste, markiertes LV, Risikobericht. In der Demo zeigen die Exporte den Demo-Stand.",
       target: "#pruefen-scroll .export-bar",
       async enter() { await openView("pruefen"); } },
     { title: "Fertig", text: "Jetzt selbst ausprobieren.", target: null, async enter() {} },
@@ -152,6 +159,7 @@
     card.querySelector("#tour-back").disabled = index === 0;
     card.querySelector("#tour-next").textContent = index === STEPS.length - 1 ? "Fertig" : "Weiter";
     card.querySelector("#tour-end").hidden = index === STEPS.length - 1;
+    card.querySelector("#tour-next").focus({ preventScroll: true });
     try {
       await step.enter();
     } catch (error) {
@@ -171,13 +179,40 @@
     card.querySelector("#tour-next").focus({ preventScroll: true });
   }
 
+  function cardButtons() {
+    return Array.from(tour.parts.card.querySelectorAll("button")).filter((button) => !button.disabled && shown(button));
+  }
+
+  /* Keys never reach the page behind the tour: Tab cycles over the card's buttons, and a key on any
+     element outside the card does nothing (so Enter or Space cannot press "Bestätigt"). */
   function onKey(event) {
     if (!tour) return;
-    if (event.key === "Tab") return;
     event.stopImmediatePropagation();
+    const inside = tour.parts.card.contains(event.target);
+    if (event.key === "Tab") {
+      event.preventDefault();
+      const buttons = cardButtons();
+      if (!buttons.length) return;
+      const at = buttons.indexOf(document.activeElement);
+      const next = at < 0 ? 0 : (at + (event.shiftKey ? -1 : 1) + buttons.length) % buttons.length;
+      buttons[next].focus({ preventScroll: true });
+      return;
+    }
+    if (!inside) event.preventDefault();
     if (event.key === "Escape") { event.preventDefault(); close(); }
     else if (event.key === "ArrowRight") { event.preventDefault(); go(tour.index + 1); }
     else if (event.key === "ArrowLeft") { event.preventDefault(); go(tour.index - 1); }
+  }
+
+  function onKeyUp(event) {
+    if (!tour) return;
+    event.stopImmediatePropagation();
+    if (!tour.parts.card.contains(event.target)) event.preventDefault();
+  }
+
+  function onFocus(event) {
+    if (!tour || tour.parts.card.contains(event.target)) return;
+    tour.parts.card.querySelector("#tour-next").focus({ preventScroll: true });
   }
 
   function start() {
@@ -186,6 +221,8 @@
     tour = { index: 0, token: 0, parts: build(), focus: document.activeElement };
     document.documentElement.classList.add("tour-open");
     window.addEventListener("keydown", onKey, true);
+    window.addEventListener("keyup", onKeyUp, true);
+    document.addEventListener("focusin", onFocus, true);
     window.addEventListener("resize", place);
     document.addEventListener("scroll", place, true);
     tour.timer = setInterval(place, 300);
@@ -198,6 +235,8 @@
     tour = null;
     clearInterval(ending.timer);
     window.removeEventListener("keydown", onKey, true);
+    window.removeEventListener("keyup", onKeyUp, true);
+    document.removeEventListener("focusin", onFocus, true);
     window.removeEventListener("resize", place);
     document.removeEventListener("scroll", place, true);
     ending.parts.catcher.remove();
