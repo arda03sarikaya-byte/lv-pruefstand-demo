@@ -1,0 +1,68 @@
+/* LV-Prüfstand online demo only: the guided tour (tour.js). Colours come from style.css. */
+.tour-catcher { position: fixed; inset: 0; z-index: 10000; background: transparent; }
+.tour-hole {
+  position: fixed;
+  z-index: 10001;
+  pointer-events: none;
+  border-radius: 8px;
+  border: 2px solid var(--accent);
+  box-shadow: 0 0 0 200vmax rgba(0, 0, 0, 0.62);
+  transition: left 0.2s, top 0.2s, width 0.2s, height 0.2s;
+}
+.tour-hole.none { left: 50% !important; top: 50% !important; width: 0 !important; height: 0 !important; border: 0; }
+.tour-card {
+  position: fixed;
+  z-index: 10002;
+  box-sizing: border-box;
+  width: 380px;
+  max-width: calc(100vw - 16px);
+  padding: 14px 16px 12px;
+  color: var(--ink);
+  background: var(--raised);
+  border: 1px solid var(--line-strong);
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
+  font-size: 16px;
+  line-height: 1.45;
+  overflow-wrap: anywhere;
+}
+.tour-card.center { left: 50% !important; top: 50% !important; transform: translate(-50%, -50%); }
+.tour-card.docked, .tour-card.docked.center {
+  left: 8px !important;
+  right: 8px;
+  top: auto !important;
+  bottom: 8px;
+  width: auto;
+  max-width: none;
+  transform: none;
+}
+.tour-count { margin: 0; font-size: 13px; color: var(--muted); }
+.tour-title { margin: 2px 0 4px; font-size: 18px; color: var(--ink); }
+.tour-text { margin: 0 0 12px; color: var(--ink-2); }
+.tour-buttons { display: flex; flex-wrap: wrap; gap: 8px; }
+.tour-buttons button {
+  padding: 6px 12px;
+  font: inherit;
+  font-size: 15px;
+  color: var(--ink);
+  background: var(--soft);
+  border: 1px solid var(--line-strong);
+  border-radius: 6px;
+  cursor: pointer;
+}
+.tour-buttons button:disabled { opacity: 0.45; cursor: default; }
+.tour-buttons .tour-next { color: #1f1e1d; background: var(--accent); border-color: var(--accent); font-weight: 600; }
+.tour-buttons .tour-end { margin-left: auto; }
+.demo-banner .tour-start {
+  margin-left: 8px;
+  padding: 0;
+  border: 0;
+  background: none;
+  font-size: inherit;
+  font-weight: 600;
+  color: var(--accent-ink);
+  text-decoration: underline;
+  cursor: pointer;
+}
+.demo-banner .tour-start:hover { color: var(--accent); }
+@media (prefers-reduced-motion: reduce) { .tour-hole { transition: none; } }
