@@ -1,0 +1,1 @@
+{"lists":[{"doc":"LV_91","trade":"Estrich","positions":4},{"doc":"LV_92","trade":"Bodenbelag","positions":2},{"doc":"AN_93","trade":"Bodenbelag","positions":1}],"positions":7,"cells":[{"a":"LV_91","b":"LV_91","findings":["S-acff08"],"severity":"info","handovers":[]},{"a":"LV_91","b":"LV_92","findings":["X1-f0a30d","X2-5b4bb3"],"severity":"high","handovers":[]}],"handovers":[]}

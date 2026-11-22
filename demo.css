@@ -1,0 +1,17 @@
+/* LV-Prüfstand online demo only: the banner above the header. Colours come from style.css. */
+.demo-banner {
+  flex: none;
+  margin: 0;
+  padding: 6px 24px;
+  font-size: 18px;
+  line-height: 1.4;
+  color: var(--ink-2);
+  background: var(--accent-soft);
+  border-bottom: 1px solid var(--accent-line);
+}
+.demo-banner a {
+  margin-left: 8px;
+  font-weight: 600;
+  color: var(--accent-ink);
+}
+.demo-banner a:hover { color: var(--accent); }

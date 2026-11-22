@@ -1,0 +1,207 @@
+{
+ "built_from": "src/contract/samples",
+ "files": [
+  "api/bench.json",
+  "api/diff.json",
+  "api/evidence/S-acff08.json",
+  "api/evidence/X1-f0a30d.json",
+  "api/evidence/X2-5b4bb3.json",
+  "api/export/fragenliste~~project~3d11-111/Fragen_und_Klaerungsliste.docx",
+  "api/export/lv-markiert~~project~3d11-111/LV_markiert.xlsx",
+  "api/export/risikobericht~~project~3d11-111/Risikobericht.pdf",
+  "api/findings.json",
+  "api/lv.json",
+  "api/lv/AN_93.json",
+  "api/lv/LV_91.json",
+  "api/lv/LV_92.json",
+  "api/matrix.json",
+  "api/page-image/S-acff08/0.json",
+  "api/page-image/S-acff08/1.json",
+  "api/page-image/X1-f0a30d/0.json",
+  "api/page-image/X1-f0a30d/1.json",
+  "api/page-image/X2-5b4bb3/0.json",
+  "api/page-image/X2-5b4bb3/1.json"
+ ],
+ "mode": "sample",
+ "project": "11-111",
+ "responses": {
+  "bench": {
+   "file": "api/bench.json",
+   "filename": null,
+   "status": 200,
+   "type": "application/json",
+   "url": "/api/bench",
+   "v": "981a7ce2b3c5"
+  },
+  "diff": {
+   "file": "api/diff.json",
+   "filename": null,
+   "status": 404,
+   "type": "application/json",
+   "url": "/api/diff",
+   "v": "594f7c459357"
+  },
+  "evidence/S-acff08": {
+   "file": "api/evidence/S-acff08.json",
+   "filename": null,
+   "status": 404,
+   "type": "application/json",
+   "url": "/api/evidence/S-acff08",
+   "v": "abb95a018012"
+  },
+  "evidence/X1-f0a30d": {
+   "file": "api/evidence/X1-f0a30d.json",
+   "filename": null,
+   "status": 404,
+   "type": "application/json",
+   "url": "/api/evidence/X1-f0a30d",
+   "v": "abb95a018012"
+  },
+  "evidence/X2-5b4bb3": {
+   "file": "api/evidence/X2-5b4bb3.json",
+   "filename": null,
+   "status": 404,
+   "type": "application/json",
+   "url": "/api/evidence/X2-5b4bb3",
+   "v": "abb95a018012"
+  },
+  "export/fragenliste?project=11-111": {
+   "file": "api/export/fragenliste~~project~3d11-111/Fragen_und_Klaerungsliste.docx",
+   "filename": "Fragen_und_Klaerungsliste.docx",
+   "status": 200,
+   "type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+   "url": "/api/export/fragenliste?project=11-111",
+   "v": "b09cc0a76148"
+  },
+  "export/lv-markiert?project=11-111": {
+   "file": "api/export/lv-markiert~~project~3d11-111/LV_markiert.xlsx",
+   "filename": "LV_markiert.xlsx",
+   "status": 200,
+   "type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+   "url": "/api/export/lv-markiert?project=11-111",
+   "v": "fe1f3a95d496"
+  },
+  "export/risikobericht?project=11-111": {
+   "file": "api/export/risikobericht~~project~3d11-111/Risikobericht.pdf",
+   "filename": "Risikobericht.pdf",
+   "status": 200,
+   "type": "application/pdf",
+   "url": "/api/export/risikobericht?project=11-111",
+   "v": "f81f1e0b1851"
+  },
+  "findings": {
+   "file": "api/findings.json",
+   "filename": null,
+   "status": 200,
+   "type": "application/json",
+   "url": "/api/findings",
+   "v": "1b80b915535d"
+  },
+  "lv": {
+   "file": "api/lv.json",
+   "filename": null,
+   "status": 200,
+   "type": "application/json",
+   "url": "/api/lv",
+   "v": "4491198a0165"
+  },
+  "lv/AN_93": {
+   "file": "api/lv/AN_93.json",
+   "filename": null,
+   "status": 200,
+   "type": "application/json",
+   "url": "/api/lv/AN_93",
+   "v": "4c670724f8d3"
+  },
+  "lv/LV_91": {
+   "file": "api/lv/LV_91.json",
+   "filename": null,
+   "status": 200,
+   "type": "application/json",
+   "url": "/api/lv/LV_91",
+   "v": "979ea80f6a95"
+  },
+  "lv/LV_92": {
+   "file": "api/lv/LV_92.json",
+   "filename": null,
+   "status": 200,
+   "type": "application/json",
+   "url": "/api/lv/LV_92",
+   "v": "c5a6ab73d267"
+  },
+  "matrix": {
+   "file": "api/matrix.json",
+   "filename": null,
+   "status": 200,
+   "type": "application/json",
+   "url": "/api/matrix",
+   "v": "b9ee5648e647"
+  },
+  "page-image/S-acff08/0": {
+   "file": "api/page-image/S-acff08/0.json",
+   "filename": null,
+   "status": 404,
+   "type": "application/json",
+   "url": "/api/page-image/S-acff08/0",
+   "v": "53deb24aca72"
+  },
+  "page-image/S-acff08/1": {
+   "file": "api/page-image/S-acff08/1.json",
+   "filename": null,
+   "status": 404,
+   "type": "application/json",
+   "url": "/api/page-image/S-acff08/1",
+   "v": "53deb24aca72"
+  },
+  "page-image/X1-f0a30d/0": {
+   "file": "api/page-image/X1-f0a30d/0.json",
+   "filename": null,
+   "status": 404,
+   "type": "application/json",
+   "url": "/api/page-image/X1-f0a30d/0",
+   "v": "53deb24aca72"
+  },
+  "page-image/X1-f0a30d/1": {
+   "file": "api/page-image/X1-f0a30d/1.json",
+   "filename": null,
+   "status": 404,
+   "type": "application/json",
+   "url": "/api/page-image/X1-f0a30d/1",
+   "v": "53deb24aca72"
+  },
+  "page-image/X2-5b4bb3/0": {
+   "file": "api/page-image/X2-5b4bb3/0.json",
+   "filename": null,
+   "status": 404,
+   "type": "application/json",
+   "url": "/api/page-image/X2-5b4bb3/0",
+   "v": "53deb24aca72"
+  },
+  "page-image/X2-5b4bb3/1": {
+   "file": "api/page-image/X2-5b4bb3/1.json",
+   "filename": null,
+   "status": 404,
+   "type": "application/json",
+   "url": "/api/page-image/X2-5b4bb3/1",
+   "v": "53deb24aca72"
+  }
+ },
+ "reviews": {
+  "S-acff08": {
+   "at": "2026-11-21T10:47",
+   "by": "Team",
+   "comment": "",
+   "eur_estimate": null,
+   "status": "confirmed"
+  },
+  "X1-f0a30d": {
+   "at": "2026-11-21T10:42",
+   "by": "Kalkulator (Mentor)",
+   "comment": "Synthetic sample: the edge strips belong to the screed trade.",
+   "eur_estimate": 150.0,
+   "status": "confirmed"
+  }
+ },
+ "reviews_from": "src/contract/samples/reviews.json",
+ "version": 1
+}
