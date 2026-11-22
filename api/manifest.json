@@ -1,29 +1,54 @@
 {
- "built_from": "src/contract/samples",
  "files": [
   "api/bench.json",
   "api/diff.json",
-  "api/evidence/S-acff08.json",
-  "api/evidence/X1-f0a30d.json",
-  "api/evidence/X2-5b4bb3.json",
-  "api/export/fragenliste~~project~3d11-111/Fragen_und_Klaerungsliste.docx",
-  "api/export/lv-markiert~~project~3d11-111/LV_markiert.xlsx",
-  "api/export/risikobericht~~project~3d11-111/Risikobericht.pdf",
+  "api/evidence/X1-232b02.json",
+  "api/evidence/X1-4310ee.json",
+  "api/evidence/X1-60f405.json",
+  "api/evidence/X1-6a548e.json",
+  "api/evidence/X2-ce48ef.json",
+  "api/evidence/X2-ea4f8b.json",
+  "api/evidence/X2-fd9305.json",
+  "api/evidence/X3-314d9d.json",
+  "api/evidence/X3-32470a.json",
+  "api/evidence/X3-346ff8.json",
+  "api/evidence/X3-b68006.json",
+  "api/export/fragenliste~~project~3dDEMO-01/Fragen_und_Klaerungsliste.docx",
+  "api/export/lv-markiert~~project~3dDEMO-01/LV_markiert.xlsx",
+  "api/export/risikobericht~~project~3dDEMO-01/Risikobericht.pdf",
   "api/findings.json",
   "api/lv.json",
-  "api/lv/AN_93.json",
-  "api/lv/LV_91.json",
-  "api/lv/LV_92.json",
+  "api/lv/LV_01.json",
+  "api/lv/LV_02.json",
+  "api/lv/LV_03.json",
+  "api/lv/LV_04.json",
+  "api/lv/LV_05.json",
+  "api/lv/LV_06.json",
   "api/matrix.json",
-  "api/page-image/S-acff08/0.json",
-  "api/page-image/S-acff08/1.json",
-  "api/page-image/X1-f0a30d/0.json",
-  "api/page-image/X1-f0a30d/1.json",
-  "api/page-image/X2-5b4bb3/0.json",
-  "api/page-image/X2-5b4bb3/1.json"
+  "api/page-image/X1-232b02/0.png",
+  "api/page-image/X1-232b02/1.png",
+  "api/page-image/X1-4310ee/0.png",
+  "api/page-image/X1-4310ee/1.png",
+  "api/page-image/X1-60f405/0.png",
+  "api/page-image/X1-60f405/1.png",
+  "api/page-image/X1-6a548e/0.png",
+  "api/page-image/X1-6a548e/1.png",
+  "api/page-image/X2-ce48ef/0.png",
+  "api/page-image/X2-ce48ef/1.png",
+  "api/page-image/X2-ea4f8b/0.png",
+  "api/page-image/X2-ea4f8b/1.png",
+  "api/page-image/X2-ea4f8b/2.png",
+  "api/page-image/X2-fd9305/0.png",
+  "api/page-image/X2-fd9305/1.png",
+  "api/page-image/X3-314d9d/0.png",
+  "api/page-image/X3-32470a/0.png",
+  "api/page-image/X3-32470a/1.png",
+  "api/page-image/X3-346ff8/0.png",
+  "api/page-image/X3-346ff8/1.png",
+  "api/page-image/X3-b68006/0.png"
  ],
- "mode": "sample",
- "project": "11-111",
+ "mode": "real",
+ "project": "DEMO-01",
  "responses": {
   "bench": {
    "file": "api/bench.json",
@@ -31,63 +56,127 @@
    "status": 200,
    "type": "application/json",
    "url": "/api/bench",
-   "v": "981a7ce2b3c5"
+   "v": "eonnfcnbmibp"
   },
   "diff": {
    "file": "api/diff.json",
    "filename": null,
-   "status": 404,
+   "status": 200,
    "type": "application/json",
    "url": "/api/diff",
-   "v": "594f7c459357"
+   "v": "jkmcfmkbdjbh"
   },
-  "evidence/S-acff08": {
-   "file": "api/evidence/S-acff08.json",
+  "evidence/X1-232b02": {
+   "file": "api/evidence/X1-232b02.json",
    "filename": null,
-   "status": 404,
+   "status": 200,
    "type": "application/json",
-   "url": "/api/evidence/S-acff08",
-   "v": "abb95a018012"
+   "url": "/api/evidence/X1-232b02",
+   "v": "bgpeddhckjjc"
   },
-  "evidence/X1-f0a30d": {
-   "file": "api/evidence/X1-f0a30d.json",
+  "evidence/X1-4310ee": {
+   "file": "api/evidence/X1-4310ee.json",
    "filename": null,
-   "status": 404,
+   "status": 200,
    "type": "application/json",
-   "url": "/api/evidence/X1-f0a30d",
-   "v": "abb95a018012"
+   "url": "/api/evidence/X1-4310ee",
+   "v": "gacgijclklcg"
   },
-  "evidence/X2-5b4bb3": {
-   "file": "api/evidence/X2-5b4bb3.json",
+  "evidence/X1-60f405": {
+   "file": "api/evidence/X1-60f405.json",
    "filename": null,
-   "status": 404,
+   "status": 200,
    "type": "application/json",
-   "url": "/api/evidence/X2-5b4bb3",
-   "v": "abb95a018012"
+   "url": "/api/evidence/X1-60f405",
+   "v": "inddhjhnoomp"
   },
-  "export/fragenliste?project=11-111": {
-   "file": "api/export/fragenliste~~project~3d11-111/Fragen_und_Klaerungsliste.docx",
+  "evidence/X1-6a548e": {
+   "file": "api/evidence/X1-6a548e.json",
+   "filename": null,
+   "status": 200,
+   "type": "application/json",
+   "url": "/api/evidence/X1-6a548e",
+   "v": "ganbalcoibfk"
+  },
+  "evidence/X2-ce48ef": {
+   "file": "api/evidence/X2-ce48ef.json",
+   "filename": null,
+   "status": 200,
+   "type": "application/json",
+   "url": "/api/evidence/X2-ce48ef",
+   "v": "fdpjllekfcch"
+  },
+  "evidence/X2-ea4f8b": {
+   "file": "api/evidence/X2-ea4f8b.json",
+   "filename": null,
+   "status": 200,
+   "type": "application/json",
+   "url": "/api/evidence/X2-ea4f8b",
+   "v": "hipjalkaedek"
+  },
+  "evidence/X2-fd9305": {
+   "file": "api/evidence/X2-fd9305.json",
+   "filename": null,
+   "status": 200,
+   "type": "application/json",
+   "url": "/api/evidence/X2-fd9305",
+   "v": "oddjnfacimkg"
+  },
+  "evidence/X3-314d9d": {
+   "file": "api/evidence/X3-314d9d.json",
+   "filename": null,
+   "status": 200,
+   "type": "application/json",
+   "url": "/api/evidence/X3-314d9d",
+   "v": "nelneckakjli"
+  },
+  "evidence/X3-32470a": {
+   "file": "api/evidence/X3-32470a.json",
+   "filename": null,
+   "status": 200,
+   "type": "application/json",
+   "url": "/api/evidence/X3-32470a",
+   "v": "chmmchmicffe"
+  },
+  "evidence/X3-346ff8": {
+   "file": "api/evidence/X3-346ff8.json",
+   "filename": null,
+   "status": 200,
+   "type": "application/json",
+   "url": "/api/evidence/X3-346ff8",
+   "v": "fpndeaimbkda"
+  },
+  "evidence/X3-b68006": {
+   "file": "api/evidence/X3-b68006.json",
+   "filename": null,
+   "status": 200,
+   "type": "application/json",
+   "url": "/api/evidence/X3-b68006",
+   "v": "fhcfhcomadmd"
+  },
+  "export/fragenliste?project=DEMO-01": {
+   "file": "api/export/fragenliste~~project~3dDEMO-01/Fragen_und_Klaerungsliste.docx",
    "filename": "Fragen_und_Klaerungsliste.docx",
    "status": 200,
    "type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
-   "url": "/api/export/fragenliste?project=11-111",
-   "v": "b09cc0a76148"
+   "url": "/api/export/fragenliste?project=DEMO-01",
+   "v": "amomecgfbfdj"
   },
-  "export/lv-markiert?project=11-111": {
-   "file": "api/export/lv-markiert~~project~3d11-111/LV_markiert.xlsx",
+  "export/lv-markiert?project=DEMO-01": {
+   "file": "api/export/lv-markiert~~project~3dDEMO-01/LV_markiert.xlsx",
    "filename": "LV_markiert.xlsx",
    "status": 200,
    "type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
-   "url": "/api/export/lv-markiert?project=11-111",
-   "v": "fe1f3a95d496"
+   "url": "/api/export/lv-markiert?project=DEMO-01",
+   "v": "mofackilmehc"
   },
-  "export/risikobericht?project=11-111": {
-   "file": "api/export/risikobericht~~project~3d11-111/Risikobericht.pdf",
+  "export/risikobericht?project=DEMO-01": {
+   "file": "api/export/risikobericht~~project~3dDEMO-01/Risikobericht.pdf",
    "filename": "Risikobericht.pdf",
    "status": 200,
    "type": "application/pdf",
-   "url": "/api/export/risikobericht?project=11-111",
-   "v": "f81f1e0b1851"
+   "url": "/api/export/risikobericht?project=DEMO-01",
+   "v": "mndcigamkkef"
   },
   "findings": {
    "file": "api/findings.json",
@@ -95,7 +184,7 @@
    "status": 200,
    "type": "application/json",
    "url": "/api/findings",
-   "v": "1b80b915535d"
+   "v": "dlhkoflmfacm"
   },
   "lv": {
    "file": "api/lv.json",
@@ -103,31 +192,55 @@
    "status": 200,
    "type": "application/json",
    "url": "/api/lv",
-   "v": "4491198a0165"
+   "v": "aibcfkagpanp"
   },
-  "lv/AN_93": {
-   "file": "api/lv/AN_93.json",
+  "lv/LV_01": {
+   "file": "api/lv/LV_01.json",
    "filename": null,
    "status": 200,
    "type": "application/json",
-   "url": "/api/lv/AN_93",
-   "v": "4c670724f8d3"
+   "url": "/api/lv/LV_01",
+   "v": "lfdhfilmgdac"
   },
-  "lv/LV_91": {
-   "file": "api/lv/LV_91.json",
+  "lv/LV_02": {
+   "file": "api/lv/LV_02.json",
    "filename": null,
    "status": 200,
    "type": "application/json",
-   "url": "/api/lv/LV_91",
-   "v": "979ea80f6a95"
+   "url": "/api/lv/LV_02",
+   "v": "cgecofapjckj"
   },
-  "lv/LV_92": {
-   "file": "api/lv/LV_92.json",
+  "lv/LV_03": {
+   "file": "api/lv/LV_03.json",
    "filename": null,
    "status": 200,
    "type": "application/json",
-   "url": "/api/lv/LV_92",
-   "v": "c5a6ab73d267"
+   "url": "/api/lv/LV_03",
+   "v": "poaenaccgjpk"
+  },
+  "lv/LV_04": {
+   "file": "api/lv/LV_04.json",
+   "filename": null,
+   "status": 200,
+   "type": "application/json",
+   "url": "/api/lv/LV_04",
+   "v": "fficjmibfcmd"
+  },
+  "lv/LV_05": {
+   "file": "api/lv/LV_05.json",
+   "filename": null,
+   "status": 200,
+   "type": "application/json",
+   "url": "/api/lv/LV_05",
+   "v": "aghhmhdbpend"
+  },
+  "lv/LV_06": {
+   "file": "api/lv/LV_06.json",
+   "filename": null,
+   "status": 200,
+   "type": "application/json",
+   "url": "/api/lv/LV_06",
+   "v": "jobkabndanjo"
   },
   "matrix": {
    "file": "api/matrix.json",
@@ -135,73 +248,212 @@
    "status": 200,
    "type": "application/json",
    "url": "/api/matrix",
-   "v": "b9ee5648e647"
+   "v": "depbpgbkehok"
   },
-  "page-image/S-acff08/0": {
-   "file": "api/page-image/S-acff08/0.json",
+  "page-image/X1-232b02/0": {
+   "file": "api/page-image/X1-232b02/0.png",
    "filename": null,
-   "status": 404,
-   "type": "application/json",
-   "url": "/api/page-image/S-acff08/0",
-   "v": "53deb24aca72"
+   "status": 200,
+   "type": "image/png",
+   "url": "/api/page-image/X1-232b02/0",
+   "v": "eaihlekfbkdc"
   },
-  "page-image/S-acff08/1": {
-   "file": "api/page-image/S-acff08/1.json",
+  "page-image/X1-232b02/1": {
+   "file": "api/page-image/X1-232b02/1.png",
    "filename": null,
-   "status": 404,
-   "type": "application/json",
-   "url": "/api/page-image/S-acff08/1",
-   "v": "53deb24aca72"
+   "status": 200,
+   "type": "image/png",
+   "url": "/api/page-image/X1-232b02/1",
+   "v": "nnccondfblkn"
   },
-  "page-image/X1-f0a30d/0": {
-   "file": "api/page-image/X1-f0a30d/0.json",
+  "page-image/X1-4310ee/0": {
+   "file": "api/page-image/X1-4310ee/0.png",
    "filename": null,
-   "status": 404,
-   "type": "application/json",
-   "url": "/api/page-image/X1-f0a30d/0",
-   "v": "53deb24aca72"
+   "status": 200,
+   "type": "image/png",
+   "url": "/api/page-image/X1-4310ee/0",
+   "v": "jnikhffilmdn"
   },
-  "page-image/X1-f0a30d/1": {
-   "file": "api/page-image/X1-f0a30d/1.json",
+  "page-image/X1-4310ee/1": {
+   "file": "api/page-image/X1-4310ee/1.png",
    "filename": null,
-   "status": 404,
-   "type": "application/json",
-   "url": "/api/page-image/X1-f0a30d/1",
-   "v": "53deb24aca72"
+   "status": 200,
+   "type": "image/png",
+   "url": "/api/page-image/X1-4310ee/1",
+   "v": "ncgcliilogol"
   },
-  "page-image/X2-5b4bb3/0": {
-   "file": "api/page-image/X2-5b4bb3/0.json",
+  "page-image/X1-60f405/0": {
+   "file": "api/page-image/X1-60f405/0.png",
    "filename": null,
-   "status": 404,
-   "type": "application/json",
-   "url": "/api/page-image/X2-5b4bb3/0",
-   "v": "53deb24aca72"
+   "status": 200,
+   "type": "image/png",
+   "url": "/api/page-image/X1-60f405/0",
+   "v": "cahcpapdiidk"
   },
-  "page-image/X2-5b4bb3/1": {
-   "file": "api/page-image/X2-5b4bb3/1.json",
+  "page-image/X1-60f405/1": {
+   "file": "api/page-image/X1-60f405/1.png",
    "filename": null,
-   "status": 404,
-   "type": "application/json",
-   "url": "/api/page-image/X2-5b4bb3/1",
-   "v": "53deb24aca72"
+   "status": 200,
+   "type": "image/png",
+   "url": "/api/page-image/X1-60f405/1",
+   "v": "fdcfbaeikaae"
+  },
+  "page-image/X1-6a548e/0": {
+   "file": "api/page-image/X1-6a548e/0.png",
+   "filename": null,
+   "status": 200,
+   "type": "image/png",
+   "url": "/api/page-image/X1-6a548e/0",
+   "v": "eonihjhhfaml"
+  },
+  "page-image/X1-6a548e/1": {
+   "file": "api/page-image/X1-6a548e/1.png",
+   "filename": null,
+   "status": 200,
+   "type": "image/png",
+   "url": "/api/page-image/X1-6a548e/1",
+   "v": "cfliljjfcmin"
+  },
+  "page-image/X2-ce48ef/0": {
+   "file": "api/page-image/X2-ce48ef/0.png",
+   "filename": null,
+   "status": 200,
+   "type": "image/png",
+   "url": "/api/page-image/X2-ce48ef/0",
+   "v": "gajdfmcogceg"
+  },
+  "page-image/X2-ce48ef/1": {
+   "file": "api/page-image/X2-ce48ef/1.png",
+   "filename": null,
+   "status": 200,
+   "type": "image/png",
+   "url": "/api/page-image/X2-ce48ef/1",
+   "v": "oacajdhcahgp"
+  },
+  "page-image/X2-ea4f8b/0": {
+   "file": "api/page-image/X2-ea4f8b/0.png",
+   "filename": null,
+   "status": 200,
+   "type": "image/png",
+   "url": "/api/page-image/X2-ea4f8b/0",
+   "v": "gpmfalngcggi"
+  },
+  "page-image/X2-ea4f8b/1": {
+   "file": "api/page-image/X2-ea4f8b/1.png",
+   "filename": null,
+   "status": 200,
+   "type": "image/png",
+   "url": "/api/page-image/X2-ea4f8b/1",
+   "v": "ngliglciiice"
+  },
+  "page-image/X2-ea4f8b/2": {
+   "file": "api/page-image/X2-ea4f8b/2.png",
+   "filename": null,
+   "status": 200,
+   "type": "image/png",
+   "url": "/api/page-image/X2-ea4f8b/2",
+   "v": "pdhnjllahjgf"
+  },
+  "page-image/X2-fd9305/0": {
+   "file": "api/page-image/X2-fd9305/0.png",
+   "filename": null,
+   "status": 200,
+   "type": "image/png",
+   "url": "/api/page-image/X2-fd9305/0",
+   "v": "gjkhmloldlgl"
+  },
+  "page-image/X2-fd9305/1": {
+   "file": "api/page-image/X2-fd9305/1.png",
+   "filename": null,
+   "status": 200,
+   "type": "image/png",
+   "url": "/api/page-image/X2-fd9305/1",
+   "v": "igjfjnnephmc"
+  },
+  "page-image/X3-314d9d/0": {
+   "file": "api/page-image/X3-314d9d/0.png",
+   "filename": null,
+   "status": 200,
+   "type": "image/png",
+   "url": "/api/page-image/X3-314d9d/0",
+   "v": "mldlbbledmjh"
+  },
+  "page-image/X3-32470a/0": {
+   "file": "api/page-image/X3-32470a/0.png",
+   "filename": null,
+   "status": 200,
+   "type": "image/png",
+   "url": "/api/page-image/X3-32470a/0",
+   "v": "pclfmkpmmode"
+  },
+  "page-image/X3-32470a/1": {
+   "file": "api/page-image/X3-32470a/1.png",
+   "filename": null,
+   "status": 200,
+   "type": "image/png",
+   "url": "/api/page-image/X3-32470a/1",
+   "v": "jamejcfgbdlc"
+  },
+  "page-image/X3-346ff8/0": {
+   "file": "api/page-image/X3-346ff8/0.png",
+   "filename": null,
+   "status": 200,
+   "type": "image/png",
+   "url": "/api/page-image/X3-346ff8/0",
+   "v": "algdokkcdefm"
+  },
+  "page-image/X3-346ff8/1": {
+   "file": "api/page-image/X3-346ff8/1.png",
+   "filename": null,
+   "status": 200,
+   "type": "image/png",
+   "url": "/api/page-image/X3-346ff8/1",
+   "v": "ijkhadonncmj"
+  },
+  "page-image/X3-b68006/0": {
+   "file": "api/page-image/X3-b68006/0.png",
+   "filename": null,
+   "status": 200,
+   "type": "image/png",
+   "url": "/api/page-image/X3-b68006/0",
+   "v": "khojinpnmgin"
   }
  },
  "reviews": {
-  "S-acff08": {
-   "at": "2026-11-21T10:47",
-   "by": "Team",
-   "comment": "",
+  "X2-ce48ef": {
+   "at": "2026-11-22T09:12",
+   "by": "Demo",
+   "comment": "Demo-Bewertung: Lochdurchmesser und Stückzahl vor der Vergabe mit der Elektroplanung abstimmen.",
    "eur_estimate": null,
    "status": "confirmed"
   },
-  "X1-f0a30d": {
-   "at": "2026-11-21T10:42",
-   "by": "Kalkulator (Mentor)",
-   "comment": "Synthetic sample: the edge strips belong to the screed trade.",
-   "eur_estimate": 150.0,
+  "X2-ea4f8b": {
+   "at": "2026-11-22T09:31",
+   "by": "Demo",
+   "comment": "Demo-Bewertung: Fläche mit Q3 beim Architekten nachfragen.",
+   "eur_estimate": null,
+   "status": "unclear"
+  },
+  "X3-32470a": {
+   "at": "2026-11-22T09:24",
+   "by": "Demo",
+   "comment": "Demo-Bewertung: Potentialausgleich dem LV Elektro zuordnen.",
+   "eur_estimate": null,
+   "status": "confirmed"
+  },
+  "X3-346ff8": {
+   "at": "2026-11-22T09:18",
+   "by": "Demo",
+   "comment": "Demo-Bewertung: Estrich fehlt in allen LV; Position im LV Rohbau oder eigenes LV Estrich ergänzen.",
+   "eur_estimate": null,
    "status": "confirmed"
   }
  },
- "reviews_from": "src/contract/samples/reviews.json",
+ "source": {
+  "data": null,
+  "out_root": "demo-out",
+  "project": "DEMO-01",
+  "reviews": "demo-reviews/DEMO-01.json"
+ },
  "version": 1
 }

@@ -427,7 +427,7 @@
     const h = answer.hypothesis;
     const sections = h.sections.map((s) => s.item_no + " " + s.title).join(", ");
     const hypo = el("section", { class: "card wide" },
-      el("h3", { text: "Ausschreibung gegen Auftrag: 8209.003" }),
+      el("h3", { text: ((pair) => "Ausschreibung gegen Auftrag" + (pair && pair.a.file && pair.b.file ? ": " + pair.a.file + " gegen " + pair.b.file : ""))(answer.pairs.find((p) => p.stage && p.a.items === h.tendered && p.b.items === h.ordered)) }),
       el("div", { class: "tiles" }, tile(h.tendered, "ausgeschrieben"), tile(h.ordered, "beauftragt"),
         tile(h.added.count, "kamen hinzu", "added"), tile(h.removed, "entfallen"), tile(h.renumbered, "umnummeriert")),
       el("p", { text: "Ergebnis: " + h.verdict + ". Hinzugekommen" +
@@ -504,6 +504,7 @@
     }
     table.append(body);
     root.replaceChildren(
+      el("p", { class: "message", id: "demo-bench-note", text: "Messwerte aus dem echten Challenge-Projekt (auch im README des Repositorys). Die übrigen Ansichten zeigen erfundene Daten." }),
       el("p", { class: "muted", text: "Messlauf vom " + String(answer.measured_at || "").replace("T", " ") +
         ". Die Schwellen standen vor dem ersten Lauf fest (docs/PREREG.md). Jedes Ergebnis steht, wie es herauskam, " +
         "auch unter der Schwelle. M7 zählt Fehler, die wir selbst eingebaut haben." }),
